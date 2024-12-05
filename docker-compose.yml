@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  php-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - mysql
+    environment:
+      DB_HOST: mysql
+      DB_NAME: assignWeb
+      DB_USER: root
+      DB_PASS: root
+
+  mysql:
+    image: mysql:lts
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: assignWeb
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
