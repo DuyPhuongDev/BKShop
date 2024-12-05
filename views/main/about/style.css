@@ -1,0 +1,21 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+.about-section {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+}
+.team-member img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+.team-member img:hover {
+    transform: scale(1.1);
+}
+.core-values i {
+    font-size: 2rem;
+    color: #007bff;
+}
